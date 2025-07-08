@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desbloquea la Pista</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2em;
+      background: #f9f9f9;
+      text-align: center;
+    }
+    input {
+      padding: 0.5em;
+      font-size: 1em;
+      width: 80%;
+      max-width: 300px;
+    }
+    button {
+      padding: 0.5em 1em;
+      font-size: 1em;
+      margin-top: 1em;
+    }
+    #resultado {
+      margin-top: 2em;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <h2>Introduce la contraseña secreta:</h2>
+  <input type="text" id="clave" placeholder="Escribe aquí..." />
+  <br>
+  <button onclick="verificar()">Comprobar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificar() {
+      const clave = document.getElementById('clave').value.trim().toLowerCase();
+      const correcta = "laverdad123"; // Cambia esto por la contraseña que quieras
+
+      if (clave === correcta) {
+        document.getElementById('resultado').innerText = "Coordenadas: 36.7381, -5.1639";
+      } else {
+        document.getElementById('resultado').innerText = "Contraseña incorrecta. Intenta de nuevo.";
+      }
+    }
+  </script>
+</body>
+</html>
