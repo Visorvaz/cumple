@@ -38,11 +38,17 @@
 
   <script>
     function verificar() {
-      const clave = document.getElementById('clave').value.trim().toLowerCase();
-      const correcta = "VJMARUDAAMTEOAPTA2"; // Cambia esto por la contraseña que quieras
+      const clave = document.getElementById('clave').value.trim();
+      const correcta = "VJMARUDAAMTEOAPTA2";
 
       if (clave === correcta) {
-        document.getElementById('resultado').innerText = "✅ ¡Correcto! Coordenadas: 36°10'14.6\"N 5°30'44.6\"W Dirígete allí para encontrar la llave que te llevará al tesoro.";
+        const resultado = document.getElementById('resultado');
+        resultado.classList.add('correcto');
+        resultado.innerHTML = `
+          <p>✅ ¡Correcto!</p>
+          <p><strong>Coordenadas:</strong> 36°10'14.6"N 5°30'44.6"W</p>
+          <p>Dirígete allí para encontrar la siguiente pista.</p>
+        `;
       } else {
         document.getElementById('resultado').innerText = "Contraseña incorrecta. Intenta de nuevo.";
       }
